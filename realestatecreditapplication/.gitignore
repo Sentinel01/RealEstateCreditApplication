@@ -1,4 +1,7 @@
 /bin
 /target
+/.settings
 .metadata
 .DS_Store
+.classpath
+.project
