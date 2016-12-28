@@ -3,34 +3,38 @@
   <groupId>de.demimoranes</groupId>
   <artifactId>realestatecreditapplication</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>realestatecreditapplication</name>
+  <packaging>pom</packaging>
+  
+  <name>Real Estate Credit Application</name>
   <description>Real Estate Credit Application</description>
   
   <properties>
   		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   
   <dependencies>
   		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>1.8.6</version>
+			<version>2.4.7</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.13</version>
+			<version>1.2.17</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.0</version>
+			<version>2.5</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.10</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
   </dependencies>
@@ -38,19 +42,26 @@
   <build>
   		<plugins>
   			<plugin>
+  				<!--<groupId>org.apache.maven.plugins</groupId>-->
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>3.6.0</version>
 				<configuration>
 					<compilerId>groovy-eclipse-compiler</compilerId>
 					<verbose>true</verbose>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.codehaus.groovy</groupId>
 						<artifactId>groovy-eclipse-compiler</artifactId>
-						<version>2.6.0-01</version>
+						<version>2.9.2-01</version>
+					</dependency>
+					<dependency>
+					  <groupId>org.codehaus.groovy</groupId>
+					  <artifactId>groovy-eclipse-batch</artifactId>
+					  <version>2.3.7-01</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -69,6 +80,8 @@
   		</plugins>
   </build>
   
-  <packaging>pom</packaging>
+  <modules>
+  	<module>../../RealEstateCredit/realestatecredit</module>
+  </modules>
   
 </project>
